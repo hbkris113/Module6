@@ -122,6 +122,12 @@ app.get("/api/player", (req, res) => {
   }
 });
 
+app.post("/api/reset", (req, res) => {
+  playerRecord.wins = 0;
+  playerRecord.losses = 0;
+  res.sendStatus(200);
+});
+
 app.listen(8000, () => {
   console.log(`Listening on 8000`);
 });
