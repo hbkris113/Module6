@@ -177,7 +177,16 @@ const getAllBots = () => {
     });
   });
 };
-
+window.onload = function () {
+  axios
+    .post("/api/reset")
+    .then((response) => {
+      console.log("Player record reset");
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+};
 drawBtn.addEventListener("click", drawFive);
 duelBtn.addEventListener("click", duel);
 playAgainBtn.addEventListener("click", reset);
